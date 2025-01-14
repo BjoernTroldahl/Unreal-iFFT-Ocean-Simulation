@@ -35,6 +35,35 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Buoyancy")
 	TArray<FVector> GetBuoyancyArray(TArray<FVector> Points);
 
+//Moving the boat
+	/*UFUNCTION(BlueprintCallable, Category = "Buoyancy")
+	void ApplyMovementForce(FVector Direction, float Strength);
+	UFUNCTION(BlueprintCallable, Category = "Buoyancy")
+	void ApplySteeringTorque(float TorqueStrength);*/
+
+	// Add these properties
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float MovementSpeed = 50.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float MaxVelocity = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	//boolean for controlling forward movement speed
+	bool bIsMovingForward = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float MovementSmoothing = 0.1f;  // Lower = smoother but less responsive
+
+	//Rotation
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float RotationSpeed = 100.0f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	float MaxRotationRate = 180.0f;  // Maximum degrees per second
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
+	bool bIsRotating = false;
 
 private:
 	AActor* ParentActor = nullptr;
@@ -46,6 +75,12 @@ private:
 	FRotator RelativeStaticMeshRotation;
 	FOceanFFTCalculator* FFTCalculator;
 	bool bWaterZoneValid = true;
+	FVector CurrentVelocity = FVector::ZeroVector;
+	FVector TargetLocation = FVector::ZeroVector;
+	void UpdateMovement(float DeltaTime);
+	FVector LastPosition = FVector::ZeroVector;
+	float CurrentRotationRate = 0.0f;
+	FRotator TargetRotation = FRotator::ZeroRotator;
 
 	FOceanFFTCalculator* InitializeWaterZoneReference();
 	FVector FindAverageLocation(TArray<FVector> Locations);
