@@ -36,12 +36,6 @@ public:
 	TArray<FVector> GetBuoyancyArray(TArray<FVector> Points);
 
 //Moving the boat
-	/*UFUNCTION(BlueprintCallable, Category = "Buoyancy")
-	void ApplyMovementForce(FVector Direction, float Strength);
-	UFUNCTION(BlueprintCallable, Category = "Buoyancy")
-	void ApplySteeringTorque(float TorqueStrength);*/
-
-	// Add these properties
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	float MovementSpeed = 50.0f;
 
