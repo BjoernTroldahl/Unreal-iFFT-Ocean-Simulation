@@ -1,4 +1,4 @@
-# Unreal-FFT-Ocean-Simulation
+# Unreal-iFFT-Ocean-Simulation
 All the C++ scripts used for generating inverse Fast Fourier Transform ocean waves in real-time for Unreal Engine 5.3.
 
 The scripts also ensure adpative tessellation based on the camera's distance to the waves, as well as both static and movable run-time buoyancy. 
