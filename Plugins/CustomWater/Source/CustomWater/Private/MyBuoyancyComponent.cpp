@@ -77,14 +77,9 @@ void UMyBuoyancyComponent::TickComponent(float DeltaTime, ELevelTick TickType, F
 			CurrentLocation.Y + MovementDelta.Y,
 			BuoyancyLocation.Z + WaterHeight
 		);
-		/*TargetLocation = FVector(
-			BuoyancyLocation.X,
-			TargetLocation.Y + CurrentVelocity.Y * DeltaTime,
-			BuoyancyLocation.Z + WaterHeight
-		);*/
 
-		// Smoothly interpolate to the target location
-        FVector NewLocation = FMath::VInterpTo(
+	    // Smoothly interpolate to the target location
+            FVector NewLocation = FMath::VInterpTo(
             CurrentLocation,
             TargetLocation,
             DeltaTime,
@@ -238,8 +233,6 @@ void UMyBuoyancyComponent::DrawBuoyancyArrayDebugPoints(const TArray<FVector>& B
 }
 
 //Boat movement
-
-// Add this new function to handle movement
 void UMyBuoyancyComponent::UpdateMovement(float DeltaTime)
 {
 	const float MinSpeedThreshold = 1.0f;
@@ -247,7 +240,6 @@ void UMyBuoyancyComponent::UpdateMovement(float DeltaTime)
 
 	if (bIsMovingForward)
 	{
-		//float TargetVelocity = MaxVelocity;
 
 		// Accelerate towards max velocity
 		CurrentVelocity.Y = FMath::FInterpTo(
@@ -259,7 +251,8 @@ void UMyBuoyancyComponent::UpdateMovement(float DeltaTime)
 	}
 	else
 	{
-		// Decelerate to zero
+		
+	// Decelerate to zero
         CurrentVelocity.Y = FMath::FInterpTo(
             CurrentVelocity.Y,
             0.0f,
@@ -276,13 +269,6 @@ void UMyBuoyancyComponent::UpdateMovement(float DeltaTime)
 
 	// Handle rotation
 	float TargetRotationRate = bIsRotating ? MaxRotationRate : 0.0f;
-
-	//float TargetRotationRate = 0.0f;
-
-	/*if (bIsRotating)
-	{
-		TargetRotationRate = MaxRotationRate;
-	}*/
 
 	// Smoothly interpolate rotation rate
 	CurrentRotationRate = FMath::FInterpTo(
@@ -308,22 +294,3 @@ void UMyBuoyancyComponent::UpdateMovement(float DeltaTime)
 	UE_LOG(LogTemp, Warning, TEXT("Velocity: Y=%f, RotationRate: Z=%f"), CurrentVelocity.Y, CurrentRotationRate);
 
 }
-
-/*void UMyBuoyancyComponent::ApplyMovementForce(FVector Direction, float Strength)
-{
-	if (MyStaticMeshComponent && MyStaticMeshComponent->IsSimulatingPhysics())
-	{
-		FVector Force = Direction * Strength * 2.0f;  // Boost strength if needed
-		MyStaticMeshComponent->AddForce(Force);
-	}
-}
-
-void UMyBuoyancyComponent::ApplySteeringTorque(float TorqueStrength)
-{
-	if (MyStaticMeshComponent && MyStaticMeshComponent->IsSimulatingPhysics())
-	{
-		FVector Torque = FVector(0.f, 0.f, TorqueStrength);
-		MyStaticMeshComponent->AddTorqueInDegrees(Torque);
-	}
-}*/
-
