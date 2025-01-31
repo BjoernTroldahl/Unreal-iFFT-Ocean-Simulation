@@ -5,4 +5,5 @@ The scripts also ensure adpative tessellation based on the camera's distance to 
 
 Included is also a batch file that automates rebuilding from source of the Unreal C++ project, whenever you double-click it.
 
-<img src="https://github.com/user-attachments/assets/b881e860-75d0-4aad-8b7c-3393b444493f" width="852" height="324"/>
+<img width="1522" alt="Boat_above" src="https://github.com/user-attachments/assets/abd4d44f-46d6-4465-b662-99bdd5819497" />
+![boatFRONT-thmb](https://github.com/user-attachments/assets/2d47be95-2065-4786-bca1-be41af68073a)
