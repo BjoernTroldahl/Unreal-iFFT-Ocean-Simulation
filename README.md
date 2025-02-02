@@ -7,7 +7,7 @@ Included here are all the C++ scripts used for generating inverse Fast Fourier T
 The scripts also ensure adpative tessellation based on the camera's distance to the waves, as well as both static and movable run-time buoyancy. 
 All bouyancy-related code can be found in MyBuoyancy.h and MyBuoyancy.cpp.
 
-Attached is also a batch file that automates rebuilding from source of the Unreal C++ project, whenever double-clicked.
+Attached is also a batch file that automates rebuilding from source of the Unreal C++ project whenever double-clicked.
 
 More optimization with multi-threading and a smoother transition between wave LODs are already ideas for future work.
 
