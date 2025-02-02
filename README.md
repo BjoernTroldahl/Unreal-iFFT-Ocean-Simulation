@@ -12,3 +12,4 @@ Attached is also a batch file that automates rebuilding from source of the Unrea
 More optimization with multi-threading and a smoother transition between wave LODs are already ideas for future work.
 
 <img width="1522" alt="Boat_above" src="https://github.com/user-attachments/assets/abd4d44f-46d6-4465-b662-99bdd5819497" />
+<img width="1526" alt="BOAT-Thmb" src="https://github.com/user-attachments/assets/726c3108-2514-4b74-b499-642f4c58f630" />
