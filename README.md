@@ -1,6 +1,6 @@
 # Unreal-iFFT-Ocean-Simulation
 
-This repository is Part 2 of an Unreal project oublished to my Artstation: https://www.artstation.com/artwork/vbYqaE
+This repository is Part 2 of an Unreal project published to my Artstation: https://www.artstation.com/artwork/vbYqaE
 
 Included here are all the C++ scripts used for generating inverse Fast Fourier Transform ocean waves in real-time for the Unreal Engine 5.3 project.
 
